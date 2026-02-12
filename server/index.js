@@ -2,6 +2,8 @@ require("dotenv").config(); //loading in variables from .env
 const db = require("./db");
 const express = require("express"); //express- node framework for building servers
 const cors = require("cors"); // browsers block request between different ports unless cors allows it
+const mongoose = require("mongoose");
+
 
 const app = express(); // creating an express app instance = " The server object ill configure and run"
 
@@ -16,3 +18,6 @@ app.get("/api/health", (req, res) => { //Get health checkpoint
 const PORT = process.env.PORT || 5000; //choosing which port to run it on - if missing default to 5000
 app.listen(PORT, () => console.log(`API running on port ${PORT}`)); //startss the server and listens to request
 
+mongoose.connection.on("connected", () => {
+  console.log("Connected to DB:", mongoose.connection.name);
+});
