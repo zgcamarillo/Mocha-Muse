@@ -2,9 +2,27 @@ import { useEffect, useState } from "react"; //useEffect - run code after it ren
 const slides = [
     {
         id: 1,
-        title: "",
-        subtitle: "",
-        image: ""
+        title: "Maison Library",
+        subtitle: "Every plan begings with a story and ends with a dream.",
+        image: "/images/maisonlibraryhero.png"
+    },
+    {
+        id: 2,
+        title: "Cafe Amorette",
+        subtitle: "Soft moments, sweet sips, and a life beautifully planned.",
+        image: "/images/cafeamorettehero.png"
+    },
+    {
+        id: 3,
+        title: "Rooted in Teaching ",
+        subtitle: "Grounded in purpose, growing with every lesson.",
+        image: "/images/teachinghero.png"
+    },
+    {
+        id: 4,
+        title: "Budget and Growth",
+        subtitle: "Plan wisely. Spend softly. Grow beautifully.",
+        image: "/images/budgethero.png"
     }
 ]
 export default function Home() {
