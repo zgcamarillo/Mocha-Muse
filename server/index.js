@@ -1,5 +1,5 @@
 require("dotenv").config(); //loading in variables from .env
-const db = require("./db");
+const connectDB = require("./db");
 const express = require("express"); //express- node framework for building servers
 const cors = require("cors"); // browsers block request between different ports unless cors allows it
 const mongoose = require("mongoose");
@@ -21,3 +21,5 @@ app.listen(PORT, () => console.log(`API running on port ${PORT}`)); //startss th
 mongoose.connection.on("connected", () => {
   console.log("Connected to DB:", mongoose.connection.name);
 });
+
+connectDB();

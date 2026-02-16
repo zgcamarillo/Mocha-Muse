@@ -21,20 +21,20 @@ const products = [ //this array is holding the data i want to seed
         collection: "Hello Kitty"
     }, //https://www.barnesandnoble.com/w/7x9-erin-condren-2024-2025-academic-planner-hello-kitty-rainbow-relaxation-erin-condren/1145667658?ean=0840114765835
     {
-        title: "Cafe Amorrette Planner",
+        title: "Velours Planner",
         description: "",
         price: 29.99,
         image: "/images/coquetteplanner.jpg",
-        type: ["Undated", "Weekly", "The Rosette Room"],
-        collection: "The Rosette Room"
+        type: ["Undated", "Weekly", "Cafe Amorette"],
+        collection: "Cafe Amorette"
     }, //https://thehappyplanner.com/collections/cafe-coquette-collection/products/undated-cafe-coquette-customizable-planner-classic-vertical-layout-12-months
     {
         title: "Sip & Blush Planner ",
         description: "",
         price: 34.99,
         image: "/images/coquetteplannertwo.jpeg",
-        type: ["Undated", "Weekly", "The Rosette Room"],
-        collection: "The Rosette Room"
+        type: ["Undated", "Weekly", "Cafe Amorette"],
+        collection: "Cafe Amorette"
     }, //https://thehappyplanner.com/collections/happy-planners/products/undated-cafe-coquette-customizable-planner-big-horizontal-layout-12-months
     {
         title: "Hello Kitty",
@@ -100,6 +100,62 @@ const products = [ //this array is holding the data i want to seed
         type: ["Rooted in Teaching", "For Teachers", "Weekly", "Academic"],
         collection: "Rooted in Teaching"
     }, //https://thehappyplanner.com/collections/teacher-planners/products/2026-teacher-notes-customizable-teacher-planner-big-teacher-layout-15-months
+    {
+        title: "Y2K Retro Hello Kitty Planner",
+        description: "",
+        price: 25.00,
+        image: "/images/hkplannerfour.png",
+        type: ["Weekly", "Hello Kitty"],
+        collection: "Hello Kitty"
+    },
+    {
+        title: "The Darling Desk",
+        description: "",
+        price: 35.00,
+        image: "/images/academiaone.png",
+        type: ["Weekly", "Maison Library", "Academic"],
+        collection: "Maison Library"
+    },
+    {
+        title: "Moonlit Magic",
+        description: "",
+        price: 35.00,
+        image: "/images/academiatwo.png",
+        type: ["Weekly", "Maison Library", "Academic"],
+        collection: "Maison Library"
+    },
+    {
+        title: "The Ivory",
+        description: "",
+        price: 35.00,
+        image: "/images/academiathree.png",
+        type: ["Weekly", "Maison Library", "Academic"],
+        collection: "Maison Library"
+    },
+    {
+        title: "The Velvet",
+        description: "",
+        price: 35.00,
+        image: "/images/academiafour.png",
+        type: ["Weekly", "Maison Library", "Academic"],
+        collection: "Maison Library"
+    },
+    {
+        title: "Celestial Alignment",
+        description: "",
+        price: 35.00,
+        image: "/images/academiafive.png",
+        type: ["Weekly", "Maison Library", "Academic"],
+        collection: "Maison Library"
+    },
+    {
+        title: "The Cozy Cottage",
+        description: "",
+        price: 35.00,
+        image: "/images/academiasix.png",
+        type: ["Weekly", "Maison Library", "Academic"],
+        collection: "Maison Library"
+    }
 ];
 
 async function seed() {
