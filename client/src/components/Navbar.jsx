@@ -10,6 +10,11 @@ export default function Navbar() {
                 <div id="searchLogin">
                     <input type="text" placeholder="Search for anything...">
                     </input>
+                    <img src="/symbols/loupe.png"></img>
+                    <img src="symbols/user.png"></img>
+                    <img src="/symbols/heart.png"></img>
+                    <img src="/symbols/shopping-bag.png"></img>
+                    
                 </div>
             </div>
             <div id="links">

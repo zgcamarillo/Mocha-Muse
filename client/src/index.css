@@ -26,11 +26,31 @@ nav {
   align-items: center;
   justify-content: space-between;
   background-color: var(--icedcap);
+  margin: 0;
+  padding: 0;
 }
 nav #logo {
-  font-size: 60px;
+  font-size: 40px;
   font-family: "Melt Swashes";
   color: var(--espresso)
+}
+nav #navTop {
+  display: flex;
+  flex-direction: row;
+  gap: 20vw;
+  align-items: center;
+}
+#searchLogin input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--espresso)
+}
+#navTop #searchLogin img {
+  width: 22px;
+  filter: invert(7%) sepia(75%) saturate(669%) hue-rotate(335deg) brightness(95%) contrast(101%);
+  margin-left: 20px;
+  top: -29px;
+  cursor: pointer;
 }
 nav #links {
   display: flex;
