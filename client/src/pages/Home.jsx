@@ -4,25 +4,65 @@ const slides = [
         id: 1,
         title: "Maison Library",
         subtitle: "Every plan begings with a story and ends with a dream.",
-        image: "/images/librarybgd.jpg"
+        image: "/images/librarybgd.jpg",
+        titleStyle: {
+          fontFamily: "",
+          letterSpacing: "",
+          fontSize: "",
+        },
+        subtitleStyle: {
+          fontFamily: "",
+          letterspacing: "",
+          fontSize: "",
+        }
     },
     {
         id: 2,
         title: "Cafe Amorette",
         subtitle: "Soft moments, sweet sips, and a life beautifully planned.",
-        image: "/images/girlycafebgd.jpg"
+        image: "/images/girlycafebgd.jpg",
+        titleStyle: {
+          fontFamily: "",
+          letterSpacing: "",
+          fontSize: "",
+        },
+        subtitleStyle: {
+          fontFamily: "",
+          letterspacing: "",
+          fontSize: "",
+        }
     },
     {
         id: 3,
         title: "Rooted in Teaching ",
         subtitle: "Grounded in purpose, growing with every lesson.",
-        image: "/images/teachingbgd.jpg"
+        image: "/images/teachingbgd.jpg",
+        titleStyle: {
+          fontFamily: "",
+          letterSpacing: "",
+          fontSize: "",
+        },
+        subtitleStyle: {
+          fontFamily: "",
+          letterspacing: "",
+          fontSize: "",
+        }
     },
     {
         id: 4,
         title: "Budget and Growth",
         subtitle: "Plan wisely. Spend softly. Grow beautifully.",
-        image: "/images/budgetbgd.jpg"
+        image: "/images/budgetbgd.jpg",
+        titleStyle: {
+          fontFamily: "",
+          letterSpacing: "",
+          fontSize: "",
+        },
+        subtitleStyle: {
+          fontFamily: "",
+          letterspacing: "",
+          fontSize: "",
+        }
     }
 ]
 export default function Home() {
@@ -57,7 +97,9 @@ export default function Home() {
             inset: 0,
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-end",
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
             padding: 18,
             background: "linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0))",
             color: "white",
@@ -105,5 +147,18 @@ export default function Home() {
           ›
         </button>
       </section>
+      <section style = {{
+        position: "relative",
+        height: "200px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
+        }}>
+          <h3 style= {{
+            fontSize: "30px",
+            color: "#683924"
+          }}>END OF SEASON SALE </h3>
+        </section>
+      
     </div>
   );}

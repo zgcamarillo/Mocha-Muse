@@ -4,7 +4,23 @@
   --chocolate: #683924;
   --espresso: #260f06;
 }
+/* -----ANIMATION-------- */
+@keyframes fadeText {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
+/* -----FONTS------ */
 @font-face {
   font-family: "Melt Swashes";
   src: url("/fonts/melt_swashes/Melt-Swashes.ttf") format("truetype");
