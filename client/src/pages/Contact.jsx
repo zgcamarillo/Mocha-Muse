@@ -50,31 +50,61 @@ export default function Contact() {
     };
 
     return ( //display 
-        <div>
-            <h1>Contact</h1>
-            <p>Have a question? Send a Message Below. </p>
+        <div style = {{
+            margin: "40px auto",
+            padding: 0,
+            border: "1px solid ",
+            padding: "20px 30px",
+            borderRadius: "30px",
+            justifyContent: "center",
+            maxWidth: "720px",
+            display: "flex",
+            flexDirection: "column"
+        }}>
+            <h1 style={{
+                alignSelf: "center"
+            }}>Help Center</h1>
+            <p style={{
+                alignSelf: "center"
+            }}>Contact Us</p>
 
             {submitted && (
                 <div>Message Submitted</div> //showing success
             )}
 
             <form onSubmit={handleSubmit} noValidate>
-                <div>
-                    <label>Name</label>
+                <div style = {{
+                    display: "flex",
+                    flexDirection: "column",
+                    margin: "20px",
+                }}>
+                    <label>Name*</label>
                     <input name="name" value={form.name} onChange={handleChange} placeholder="Your name"
+                    style = {{
+                        padding: "10px",
+                        maxWidth: "80vw",
+                    }}
                     />
                     {errors.name && <p>{errors.name}</p>} 
                     {/* if error exist show message  */}
                 </div>
 
-                <div>
+                <div style = {{
+                    display: "flex",
+                    flexDirection: "column",
+                    margin: "20px",
+                }}>
                     <label>Email</label>
                     <input name="email" value={form.email} onChange={handleChange} placeholder="Your email"/>
                     {errors.email && <p>{errors.email}</p>} 
                     {/* if error exist show message  */}
                 </div>
 
-                <div>
+                <div style = {{
+                    display: "flex",
+                    flexDirection: "column",
+                    margin: "20px",
+                }}>
                     <label>Comment</label>
                     <textarea name="comment" value={form.comment} onChange={handleChange} placeholder="Write your message"/>
                     {errors.comment && <p>{errors.coment}</p>}
@@ -82,6 +112,9 @@ export default function Contact() {
 
                 <button type="submit">Submit</button>
             </form>
+            <section>
+                <h2>Get More Information</h2>
+            </section>
         </div>
     )
 }

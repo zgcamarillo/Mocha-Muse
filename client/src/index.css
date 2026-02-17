@@ -1,8 +1,17 @@
 :root {
-  --icedcap: #f2d9c3;
+  /* --icedcap: #f2d9c3;
   --mocha: #A57865;
   --chocolate: #683924;
   --espresso: #260f06;
+  --taupe: #b8a39a;
+  --cream: #f7f4f1;
+  --beige: #efe9e4; */
+  --cream: #f6f3ee;
+  --clay: #c9a9a6;
+  --rose: #d8a48f;
+  --olive: #a3a380;
+  --brown: #2b1d17;
+
 }
 /* -----ANIMATION-------- */
 @keyframes fadeText {
@@ -37,6 +46,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--cream);
 }
 
 /* ----- NAVIGATION ------ */
@@ -45,14 +55,13 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--icedcap);
   margin: 0;
   padding: 0;
 }
 nav #logo {
   font-size: 40px;
   font-family: "Melt Swashes";
-  color: var(--espresso)
+  color: var(--brown)
 }
 nav #navTop {
   display: flex;
@@ -67,7 +76,7 @@ nav #navTop {
 #searchLogin input {
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid var(--espresso);
+  border: 1px solid var(--brown);
   min-width: 170px;
 }
 #navTop #searchLogin img {
@@ -85,20 +94,20 @@ nav #links {
   align-items: center;
   justify-content: center;
   gap: 10vw;
-  background-color: var(--espresso);
+  background-color: var(--brown);
   width: 100%;
   padding: 10px;
   font-family: "Vouge";
 }
 #links a {
   text-decoration: none;
-  color: var(--icedcap);
+  color: var(--clay);
 }
 
 /* ------ FOOTER ------ */
 
 footer {
-  background-color: var(--espresso);
+  background-color: var(--brown);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,26 +124,28 @@ footer {
   min-width: 200px;
 }
 #footerLinks h3 {
-  color: var(--icedcap);
-  border-bottom: 1px solid var(--icedcap);
+  color: var(--olive);
+  border-bottom: 1px solid var(--olive);
   min-width: 200px;
+  padding: 9px;
+  margin-bottom: 4px;
 }
 #footerLinks a {
   text-decoration: none;
-  color: var(--mocha);
+  color: var(--cream);
+  padding: 3px 9px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  text-align: left;
+  justify-content: start;
 }
 #footerLinks img {
   height: 40px;
   width: 40px;
-  filter: invert(56%) sepia(5%) saturate(2632%) hue-rotate(332deg) brightness(89%) contrast(82%);
-  margin: 7px;
+  filter: invert(99%) sepia(96%) saturate(1263%) hue-rotate(296deg) brightness(87%) contrast(93%);
+  margin: 2px;
 }
 footer p {
-  color: var(--icedcap);
+  color: var(--rose);
   font-family: "Melt Swashes";
   font-weight: 200;
 }
