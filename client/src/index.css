@@ -89,7 +89,6 @@ footer p {
   font-family: "Melt Swashes";
   font-weight: 200;
 }
-#socialLinks {
-  display: flex;
+#socialLinks { display: flex;
   flex-direction: row;
 }
