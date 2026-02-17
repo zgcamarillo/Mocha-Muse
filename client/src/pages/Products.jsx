@@ -26,13 +26,13 @@ export default function Products() { //defining product page component
                     <option value="For Teachers">For Teachers</option>
                 </select>
 
-                <input type="number" placeholder="Max Price" onChange={(e) => setMaxPrice(e.target.value)} />
+                <input type="number" placeholder="Max Price" onChange={(e) => setMaxPrice(e.target.value)}></input>
             </div>
             
             <div
                 style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                     gap: "24px",
                     marginTop: "20px",
                 }}
@@ -60,10 +60,10 @@ export default function Products() { //defining product page component
                         <img 
                             src={p.image}
                             alt={p.title}
-                            style={{width: "100%", borderRadius: "8px"}}
+                            style={{width: "100%", heigth: "180px", objectFit: "cover", borderRadius: "10px"}}
                         />
                         <h3>{p.title}</h3>
-                        <p>{p.price}</p>
+                        <p>${p.price}</p>
                     </div>
                 ))}
             </div>
