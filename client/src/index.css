@@ -14,6 +14,10 @@
   src: url("/fonts/kg_teacher_jordan/KGTeachJordan.ttf") format("true-type");
 }
 /* } for id: 3 */
+@font-face {
+  font-family: "Vouge";
+  src: url("/fonts/Vouge.ttf") format("true-type");
+}
 body {
   margin: 0;
   padding: 0;
@@ -40,26 +44,35 @@ nav #navTop {
   gap: 20vw;
   align-items: center;
 }
+#searchLogin {
+  display: flex;
+  flex-direction: row;
+}
 #searchLogin input {
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid var(--espresso)
+  border: 1px solid var(--espresso);
+  min-width: 170px;
 }
 #navTop #searchLogin img {
+
   width: 22px;
   filter: invert(7%) sepia(75%) saturate(669%) hue-rotate(335deg) brightness(95%) contrast(101%);
   margin-left: 20px;
-  top: -29px;
   cursor: pointer;
+}
+#icons {
+  margin-top: 8px;
 }
 nav #links {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 10vw;
   background-color: var(--espresso);
   width: 100%;
   padding: 10px;
+  font-family: "Vouge";
 }
 #links a {
   text-decoration: none;
