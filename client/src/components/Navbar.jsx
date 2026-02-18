@@ -11,10 +11,10 @@ export default function Navbar() {
                     <input type="text" placeholder="Search for anything...">
                     </input>
                     <div id="icons">
-                        <img src="/symbols/loupe.png"></img>
-                        <img src="symbols/user.png"></img>
-                        <img src="/symbols/heart.png"></img>
-                        <img src="/symbols/shopping-bag.png"></img>
+                        <img src="/symbols/loupe.png" alt="search image"></img>
+                        <img src="symbols/user.png" alt="user image"></img>
+                        <img src="/symbols/heart.png" alt="favorite image"></img>
+                        <img src="/symbols/shopping-bag.png" alt="shopping bag image"></img>
                     </div>
                     
                 </div>
