@@ -10,7 +10,7 @@ const app = express(); // creating an express app instance = " The server object
 app.use(cors({
  origin: [
   "http://localhost:5173",
-  "http://mocha-muse-ten.vercel.app"
+  "https://mocha-muse-ten.vercel.app"
  ],
  credentials: true
 })); //enables cors for all request 
