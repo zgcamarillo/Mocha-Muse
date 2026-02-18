@@ -8,12 +8,25 @@ const mongoose = require("mongoose");
 const app = express(); // creating an express app instance = " The server object ill configure and run"
 
 app.use(cors({
- origin: [
-  "http://localhost:5173",
-  "https://mocha-muse-ten.vercel.app"
- ],
- credentials: true
-})); //enables cors for all request 
+  origin: (origin, cb) => {
+    // allow requests with no origin (like Postman) 
+    if (!origin) return cb(null, true);
+
+    const allowed = [
+      "http://localhost:5173",
+    ];
+
+    // allow any Vercel preview/prod domain
+    const isVercel = origin.endsWith(".vercel.app");
+
+    if (allowed.includes(origin) || isVercel) {
+      return cb(null, true);
+    }
+
+    return cb(new Error("Not allowed by CORS: " + origin));
+  },
+  credentials: true
+}));
 app.use(express.json()); //allows server to read JSON data from request 
 app.use("/api/products", require("./routes/products"));
 
