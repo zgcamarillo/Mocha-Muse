@@ -27,8 +27,8 @@ export default function Contact() {
         } else {
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;//checking for email format
-        if (!emailRegex.text(form.email))
-            newErrors.emmail = "Enter a valid email.";
+        if (!emailRegex.test(form.email))
+            newErrors.email = "Enter a valid email.";
         }
         if (!form.comment.trim())
             newErrors.comment = 'Comment is required.'; //checking for comment
@@ -50,71 +50,74 @@ export default function Contact() {
     };
 
     return ( //display 
-        <div style = {{
-            margin: "40px auto",
-            padding: 0,
-            border: "1px solid ",
-            padding: "20px 30px",
-            borderRadius: "30px",
-            justifyContent: "center",
-            maxWidth: "720px",
-            display: "flex",
-            flexDirection: "column"
-        }}>
-            <h1 style={{
-                alignSelf: "center"
-            }}>Help Center</h1>
-            <p style={{
-                alignSelf: "center"
-            }}>Contact Us</p>
+        <div id="contactPage">
+                <div id="contactCard">
+                <h1 id="contactTitle">Contact Us</h1>
+                <p id="contactSubtitle">Have a question? Please leave a message.</p>
 
-            {submitted && (
-                <div>Message Submitted</div> //showing success
-            )}
+                {submitted && (
+                    <div id="success">Message Submitted</div> //showing success
+                )}
 
-            <form onSubmit={handleSubmit} noValidate>
-                <div style = {{
-                    display: "flex",
-                    flexDirection: "column",
-                    margin: "20px",
-                }}>
-                    <label>Name*</label>
-                    <input name="name" value={form.name} onChange={handleChange} placeholder="Your name"
-                    style = {{
-                        padding: "10px",
-                        maxWidth: "80vw",
-                    }}
-                    />
-                    {errors.name && <p>{errors.name}</p>} 
-                    {/* if error exist show message  */}
-                </div>
+                <form onSubmit={handleSubmit} noValidate>
+                    <div className="form-group">
+                        <label>Name<span className="req">*</span></label>
+                        <input 
+                        id="name"
+                        name="name" 
+                        value={form.name} 
+                        onChange={handleChange} 
+                        placeholder="Your name"
+                        autoComplete="name"
+                        />
+                        {errors.name && <p className="error">{errors.name}</p>} 
+                        {/* if error exist show message  */}
+                    </div>
 
-                <div style = {{
-                    display: "flex",
-                    flexDirection: "column",
-                    margin: "20px",
-                }}>
-                    <label>Email</label>
-                    <input name="email" value={form.email} onChange={handleChange} placeholder="Your email"/>
-                    {errors.email && <p>{errors.email}</p>} 
-                    {/* if error exist show message  */}
-                </div>
+                    <div className="form-group">
+                        <label>Email<span className="req">*</span></label>
+                        <input 
+                        id="email"
+                        name="email" value={form.email} onChange={handleChange} placeholder="Your email"
+                        autoComplete="email"/>
+                        {errors.email && <p className="error">{errors.email}</p>} 
+                        {/* if error exist show message  */}
+                    </div>
 
-                <div style = {{
-                    display: "flex",
-                    flexDirection: "column",
-                    margin: "20px",
-                }}>
-                    <label>Comment</label>
-                    <textarea name="comment" value={form.comment} onChange={handleChange} placeholder="Write your message"/>
-                    {errors.comment && <p>{errors.coment}</p>}
-                </div>
+                    <div className="form-group">
+                        <label>Comment<span className="req">*</span></label>
+                        <textarea 
+                        id="comment"
+                        name="comment" value={form.comment} onChange={handleChange} placeholder="How can we help?"/>
+                        {errors.comment && <p className="error">{errors.comment}</p>}
+                    </div>
 
-                <button type="submit">Submit</button>
-            </form>
-            <section>
-                <h2>Get More Information</h2>
-            </section>
+                    <button type="submit" className="btnPrimary">Submit</button>
+
+                    <p className="privacy-hint">By submitting, you agree we may contact you about your message.
+                    </p>
+                </form>
+                <section className="contact-extra">
+                    <h2>Get More Information</h2>
+
+                    <div className="extra-grid">
+                        <div className="extra-card">
+                            <h3>Order Help</h3>
+                            <p>Shipping, returns, and order updates</p>
+                        </div>
+
+                        <div className="extra-card">
+                            <h3>Product Questions</h3>
+                            <p>Planners, inserts, sizing, and materials.</p>
+                        </div>
+
+                        <div className="extra-card">
+                            <h3>Collabs</h3>
+                            <p>Brand partnerships and creator inquiries.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     )
 }

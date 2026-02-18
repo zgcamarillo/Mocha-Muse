@@ -35,13 +35,17 @@
   src: url("/fonts/melt_swashes/Melt-Swashes.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Teacher Jordan";
-  src: url("/fonts/kg_teacher_jordan/KGTeachJordan.ttf") format("true-type");
+  font-family: "TeacherJordan";
+  src: url("/fonts/KGTeacherJordan.ttf") format("truetype");
 }
 /* } for id: 3 */
 @font-face {
+  font-family: "Beaming";
+  src: url("/fonts/Beaming.otf") format("opentype");
+}
+@font-face {
   font-family: "Vouge";
-  src: url("/fonts/Vouge.ttf") format("true-type");
+  src: url("/fonts/Vouge.ttf") format("truetype");
 }
 body {
   margin: 0;
@@ -103,7 +107,204 @@ nav #links {
   text-decoration: none;
   color: var(--clay);
 }
+/* ------HERO------ */
+.hero {
+  position: relative;
+  height: 80vh; /* adjust */
+  overflow: hidden;
+}
 
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-video,
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.fade-in {
+  animation: fadeIn 2s ease;
+}
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  /* optional readability layer */
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.45),
+    rgba(0,0,0,0)
+  );
+  color: white;
+}
+
+/* ------ CONTACT ------- */
+#contactPage {
+  margin: 70px auto;
+  padding: 44px;
+  max-width: 760px;
+  border-radius: 28px;
+  box-shadow:
+  0 14px 40px rgba(0, 0, 0, 0.08),
+  inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  font-family: "Poppins";
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(43, 29, 23, 0.08);
+}
+
+#contactTitle {
+  text-align: center;
+  color: var(--brown);
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+  margin: 0 0 6px 0;
+}
+
+#contactSubtitle {
+  text-align: center;
+  color: rgba(43, 29, 23, 0.70);
+  font-size: 1rem;         
+  margin: 0 0 26px 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;     
+  gap: 8px;                  
+}
+
+label {
+  color: var(--brown);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.req {
+  color: var(--rose);
+  font-weight: 700;
+}
+
+input,
+textarea {
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(43, 29, 23, 0.12);
+  background: rgba(255,255,255,0.92);
+  font-size: 0.95rem;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+  font-family: inherit;
+}
+
+textarea {
+  min-height: 130px;
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(216,164,143,0.9);
+  box-shadow: 0 0 0 4px rgba(216,164,143,0.16);
+  transform: translateY(-1px);
+}
+
+.error {
+  color: #b3261e;
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+#success {
+  background: rgba(163, 163, 128, 0.12);
+  border: 1px solid rgba(163, 163, 128, 0.35);
+  color: var(--olive);
+  padding: 12px 14px;
+  border-radius: 16px;
+  text-align: center;
+  margin: 0 0 18px 0;
+  font-size: 0.92rem;
+}
+
+/* button: keep yours, but make it “primary” feeling */
+#contactPage button {
+  width: 100%;
+  background: var(--olive);
+  color: white;
+  padding: 15px;
+  border-radius: 18px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+#contactPage button:hover {
+  background: var(--rose);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.privacy-hint {
+  text-align: center;
+  margin: 12px 0 0;
+  color: rgba(43,29,23,0.62);
+  font-size: 0.82rem;
+}
+
+.contact-extra {
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(43,29,23,0.10);
+}
+
+.contact-extra h2 {
+  margin: 0 0 14px;
+  color: var(--brown);
+  font-size: 1.2rem;
+}
+
+.extra-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.extra-card {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(43,29,23,0.08);
+  border-radius: 18px;
+  padding: 16px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.extra-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.08);
+}
+
+.extra-card h3 {
+  margin: 0 0 6px;
+  color: var(--brown);
+  font-size: 1rem;
+}
+
+.extra-card p {
+  margin: 0;
+  color: rgba(43,29,23,0.70);
+  font-size: 0.9rem;
+}
 /* ------ FOOTER ------ */
 
 footer {
@@ -151,4 +352,10 @@ footer p {
 }
 #socialLinks { display: flex;
   flex-direction: row;
+}
+@media (max-width: 760px) {
+  #contactPage {
+    padding: 26px;
+    margin: 40px 14px;
+  }
 }

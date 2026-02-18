@@ -20,16 +20,16 @@ const slides = [
         id: 2,
         title: "Cafe Amorette",
         subtitle: "Soft moments, sweet sips, and a life beautifully planned.",
-        image: "/images/girlycafebgd.jpg",
+        video: "/videos/cafeamorettehero.mp4",
         titleStyle: {
-          fontFamily: "",
-          letterSpacing: "",
-          fontSize: "",
+          fontFamily: "Beaming",
+          letterSpacing: "2px",
+          fontSize: "3rem",
         },
         subtitleStyle: {
-          fontFamily: "",
-          letterspacing: "",
-          fontSize: "",
+          fontFamily: "Beaming",
+          letterspacing: "1px",
+          fontSize: "1.2rem",
         }
     },
     {
@@ -38,14 +38,14 @@ const slides = [
         subtitle: "Grounded in purpose, growing with every lesson.",
         image: "/images/teachingbgd.jpg",
         titleStyle: {
-          fontFamily: "",
-          letterSpacing: "",
-          fontSize: "",
+          fontFamily: "TeacherJordan",
+          letterSpacing: "2px",
+          fontSize: "3rem",
         },
         subtitleStyle: {
-          fontFamily: "",
-          letterspacing: "",
-          fontSize: "",
+          fontFamily: "TeacherJordan",
+          letterSpacing: "1px",
+          fontSize: "1.2rem",
         }
     },
     {
@@ -84,13 +84,24 @@ export default function Home() {
     return (
     <div>
       <section style={{ position: "relative", overflow: "hidden", height: "80vh" }}>
-        <img
-          src={active.image}
-          alt={active.title}
-          style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-        />
+        <div key={active.id} className="hero-media fade-in">
+          {active.video ? (
+            <video
+            className="hero-video"
+            src={active.video}
+            poster={active.poster}
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          ) : ( <img
+            src={active.image}
+            alt={active.title}
+            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+          />)}
+       </div>
 
-       
         <div
           style={{
             position: "absolute",
@@ -105,9 +116,9 @@ export default function Home() {
             color: "white",
           }}
         >
-          <h2 style={{ margin: 0 
+          <h2 style={{ margin: 0, ...active.titleStyle
            }}>{active.title}</h2>
-          <p style={{ margin: "6px 0 0 0" }}>{active.subtitle}</p>
+          <p style={{ margin: "6px 0 0 0", ...active.subtitleStyle }}>{active.subtitle}</p>
         </div>
 
        
