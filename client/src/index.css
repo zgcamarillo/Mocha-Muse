@@ -338,35 +338,41 @@ textarea:focus {
 
 footer {
   background-color: var(--brown);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px 20px;
+  padding: 44px 18px 26px;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 #footerLinks {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding-bottom: 30px; 
-  justify-content: center;
+  max-width: 1300px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 50px;
+  margin: 0 auto;
+  padding-bottom: 22px;
 }
 #footerLinks .footerSection {
   min-width: 200px;
 }
 #footerLinks h3 {
   color: var(--olive);
-  border-bottom: 1px solid var(--olive);
+  border-bottom: 1px solid rgba(163,163,128,0.6);
   min-width: 200px;
-  padding: 9px;
-  margin-bottom: 4px;
+  padding: 0 0 10px 0;
+  margin-bottom: 0 0 12px 0;
+  font-family: "Vouge";
+  letter-spacing: 0.8px;
+  font-size: 1.05rem;
 }
 #footerLinks a {
   text-decoration: none;
-  color: var(--cream);
-  padding: 3px 9px;
+  color: rgba(246,243,238,0.9);
+  padding: 7px 0px;
   display: flex;
   flex-direction: row;
   justify-content: start;
+}
+#footerLinks a:hover {
+  color: var(--clay);
+  transform: translateY(-1px);
 }
 #footerLinks img {
   height: 40px;
@@ -379,8 +385,49 @@ footer p {
   font-family: "Melt Swashes";
   font-weight: 200;
 }
-#socialLinks { display: flex;
-  flex-direction: row;
+#socialLinks { 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 4px;
+}
+#socialLinks a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+}
+#socialLinks a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(216,164,143,0.65);
+}
+.footerBottom {
+  max-width: 1100px;
+  margin: 18px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1000px) {
+  /* ====FOOTER==== */
+  #footerLinks {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* ✅ 2 columns */
+  }
+}
+@media (max-width: 520px) {
+  /* ====FOOTER===== */
+  #footerLinks {
+    grid-template-columns: 1fr; /* ✅ stacked */
+    gap: 20px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 @media (max-width: 760px) {
   /* ===NAVIGATION==== */
