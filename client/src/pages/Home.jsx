@@ -64,7 +64,7 @@ export default function Home() {
           )}
         </div>
 
-        <div className="heroOverlay">
+        <div className={`heroOverlay ${active.theme}`}>
           <p className="heroTag">Mocha Muse</p>
           <h2 className={`heroTitle ${active.theme}`}>{active.title}</h2>
           <p className={`heroSubtitle ${active.theme}`}>{active.subtitle}</p>

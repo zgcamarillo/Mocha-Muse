@@ -156,17 +156,68 @@ nav #links {
 }
 
 /* Theme fonts */
-.heroTitle.library { font-family: "Playfair Display", serif; font-weight: 600; letter-spacing: 1.5px; }
-.heroSubtitle.library { font-family: "Inter", sans-serif; font-weight: 400; }
+.heroTitle.library { 
+  font-family: "Vouge", serif;
+  font-size: clamp(2.6rem, 4vw, 3.8rem);
+  font-weight: 600; 
+  letter-spacing: 1.5px;
+  color: #f3e9dc;
+  margin-bottom: 12px;
+  text-shadow: 
+    0 6px 18px rgba(0,0,0,0.8),
+    0 2px 4px rgba(0,0,0,0.9);
+}
+.heroSubtitle.library { 
+  font-family: "Inter", 
+  sans-serif; 
+  font-weight: 400; 
+  color: rgba(243, 233, 220, 0.85);
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
 
-.heroTitle.cafe { font-family: "Dancing Script", cursive; font-weight: 600; letter-spacing: 2px; }
-.heroSubtitle.cafe { font-family: "Inter", sans-serif; font-weight: 400; }
+.heroTitle.cafe { 
+  font-family: "Dancing Script", cursive; font-weight: 600; 
+  letter-spacing: 2px; 
+  color: #fff7f2;
 
-.heroTitle.teaching { font-family: "Poppins", sans-serif; font-weight: 600; letter-spacing: 1px; }
-.heroSubtitle.teaching { font-family: "Inter", sans-serif; font-weight: 400; }
+}
+.heroSubtitle.cafe { 
+  font-family: "Inter", sans-serif; font-weight: 400; color: #f3e9dc;
+}
 
-.heroTitle.budget { font-family: "Poppins", sans-serif; font-weight: 600; letter-spacing: 1px; }
-.heroSubtitle.budget { font-family: "Inter", sans-serif; font-weight: 400; }
+.heroTitle.teaching { 
+  font-family: "Poppins", sans-serif; 
+  font-weight: 600; 
+  letter-spacing: 1px; 
+  color: #2b1d17;
+}
+.heroSubtitle.teaching { 
+  font-family: "Inter", sans-serif; font-weight: 400;
+  color: rgba(43, 29, 23, 0.8);
+  font-size: 1.1rem;
+  text-align: center; }
+
+.heroTitle.budget { 
+  font-family: "Poppins", sans-serif; 
+  color: #fff7f2;
+  font-size: clamp(2.4rem, 4vw, 3.3rem);
+  font-weight: 650;
+  letter-spacing: 0.6px;
+  text-align: center;
+  margin: 0 0 10px;
+  text-shadow: 0 10px 26px rgba(0,0,0,0.45); }
+.heroSubtitle.budget { 
+  font-family: "Inter", sans-serif; 
+  color: rgba(255, 247, 242, 0.88);
+  font-size: 1.05rem;
+  letter-spacing: 0.25px;
+  text-align: center;
+  margin: 0 0 18px;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
 .hero {
   margin: 40px 35px 18px;
   height: 80vh;
