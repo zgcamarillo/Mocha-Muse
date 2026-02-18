@@ -55,33 +55,47 @@ body {
 
 /* ----- NAVIGATION ------ */
 nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
   margin: 0;
   padding: 0;
+  background: var(--cream);
 }
 nav #logo {
   font-size: 40px;
   font-family: "Melt Swashes";
-  color: var(--brown)
+  color: var(--brown);
+  line-height: 1;
 }
 nav #navTop {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 18px;
   display: flex;
-  flex-direction: row;
-  gap: 20vw;
   align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 #searchLogin {
   display: flex;
   flex-direction: row;
+  gap: 12px;
+  min-width: 0;
 }
 #searchLogin input {
-  padding: 10px;
-  border-radius: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
   border: 1px solid var(--brown);
-  min-width: 170px;
+  background: rgba(255,255,255,0.85);
+  min-width: 220px;
+  max-width: 360px;
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+#searchLogin input:focus {
+  outline: none;
+  border-color: rgba(216, 164, 143, 0.9);
+  box-shadow: 0 0 0 4px rgba(216, 164, 143, 0.16);
 }
 #navTop #searchLogin img {
 
@@ -89,23 +103,37 @@ nav #navTop {
   filter: invert(7%) sepia(75%) saturate(669%) hue-rotate(335deg) brightness(95%) contrast(101%);
   margin-left: 20px;
   cursor: pointer;
+  transition: transform 160ms ease;
+}
+#navTop #searchLogin img:hover {
+  transform: translateY(-3px);
 }
 #icons {
-  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 nav #links {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 10vw;
+  gap: clamp(18px, 6vw, 80px);
   background-color: var(--brown);
   width: 100%;
-  padding: 10px;
+  padding: 12px 16px;
   font-family: "Vouge";
+  letter-spacing: 0.8px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  row-gap: 10px;
+  flex-wrap: wrap;
 }
 #links a {
   text-decoration: none;
   color: var(--clay);
+  transition: color 160ms ease, transform 160ms ease;
+}
+#links a:hover {
+  color: var(--clay);
+  transform: translateY(-2px);
 }
 /* ------HERO------ */
 .hero {
@@ -279,6 +307,7 @@ textarea:focus {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
+  margin-top: 14px;
 }
 
 .extra-card {
@@ -354,8 +383,119 @@ footer p {
   flex-direction: row;
 }
 @media (max-width: 760px) {
+  /* ===NAVIGATION==== */
+  #navTop {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #searchLogin {
+    width: 100%;
+  }
+  #searchLogin input {
+    min-width: unset;
+    width: 100%;
+  }
+
+  nav #links {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  #icons {
+    justify-content: center;
+    padding-top: 6px
+  }
+
+
+  /* ====CONTACT==== */
   #contactPage {
     padding: 26px;
     margin: 40px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav #navTop {
+    padding: 12px 12px;
+  }
+  nav #logo {
+    font-size: 34px;          
+  }
+  #searchLogin {
+    gap: 10px;
+  }
+  #searchLogin input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  #icons {
+    gap: 12px;
+    flex-wrap: wrap;      
+  }
+  #navTop #searchLogin img {
+    width: 20px;
+    height: 20px;
+  }
+  nav #links {
+    padding: 10px 12px;
+    gap: 16px;
+    letter-spacing: 0.6px;
+  }
+  #links a {
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(246,243,238,0.22);
+  }
+  #links a.active {
+    border-color: rgba(216,164,143,0.7);
+  }
+
+
+  /* =====CONTACT===== */
+  #contactPage {
+    padding: 20px;
+    margin: 26px 12px;
+    border-radius: 22px;
+  }
+  #contactTitle {
+    font-size: 1.85rem;
+  }
+  #contactSubtitle {
+    font-size: 0.95rem; 
+    line-height: 1.35;
+    margin-bottom: 18px;
+  }
+  .form-group {
+    margin-bottom: 14px;
+    gap: 6px;
+  }
+  input,
+  textarea {
+    padding: 12px;
+    border-radius: 14px;
+    font-size: 0.95rem;
+  }
+  textarea {
+    min-height: 120px;
+  }
+  #contactPage button {
+    padding: 14px;
+    border-radius: 16px;
+    font-size: 1rem;
+  }
+  #success {
+    margin: 0 0 14px 0;
+    font-size: 0.9rem;
+  }
+  input:focus,
+  textarea:focus {
+    box-shadow: 0 0 0 3px rgba(216,164,143,0.14);
+  }
+  .extra-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .extra-card {
+    padding: 14px;
+    border-radius: 16px;
   }
 }
