@@ -7,7 +7,13 @@ const mongoose = require("mongoose");
 
 const app = express(); // creating an express app instance = " The server object ill configure and run"
 
-app.use(cors()); //enables cors for all request 
+app.use(cors({
+ origin: [
+  "http://localhost:5173",
+  "http://mocha-muse-ten.vercel.app"
+ ],
+ credentials: true
+})); //enables cors for all request 
 app.use(express.json()); //allows server to read JSON data from request 
 app.use("/api/products", require("./routes/products"));
 
