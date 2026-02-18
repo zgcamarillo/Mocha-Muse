@@ -59,6 +59,7 @@ export default function Products() { //defining product page component
                             alt={p.title}
                         />
                         <h3 className="productTitle">{p.title}</h3>
+                        <p className="productDesc">{p.description}</p>
                         <p className="productPrice">${Number(p.price).toFixed(2)}</p>
                         <button 
                             className="addBtn"

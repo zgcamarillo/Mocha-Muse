@@ -1,175 +1,146 @@
 import { useEffect, useState } from "react"; //useEffect - run code after it renders 
 const slides = [
-    {
-        id: 1,
-        title: "Maison Library",
-        subtitle: "Every plan begings with a story and ends with a dream.",
-        image: "/images/librarybgd.jpg",
-        titleStyle: {
-          fontFamily: "",
-          letterSpacing: "",
-          fontSize: "",
-        },
-        subtitleStyle: {
-          fontFamily: "",
-          letterspacing: "",
-          fontSize: "",
-        }
-    },
-    {
-        id: 2,
-        title: "Cafe Amorette",
-        subtitle: "Soft moments, sweet sips, and a life beautifully planned.",
-        video: "/videos/cafeamorettehero.mp4",
-        titleStyle: {
-          fontFamily: "Beaming",
-          letterSpacing: "2px",
-          fontSize: "3rem",
-        },
-        subtitleStyle: {
-          fontFamily: "Beaming",
-          letterspacing: "1px",
-          fontSize: "1.2rem",
-        }
-    },
-    {
-        id: 3,
-        title: "Rooted in Teaching ",
-        subtitle: "Grounded in purpose, growing with every lesson.",
-        image: "/images/teachingbgd.jpg",
-        titleStyle: {
-          fontFamily: "TeacherJordan",
-          letterSpacing: "2px",
-          fontSize: "3rem",
-        },
-        subtitleStyle: {
-          fontFamily: "TeacherJordan",
-          letterSpacing: "1px",
-          fontSize: "1.2rem",
-        }
-    },
-    {
-        id: 4,
-        title: "Budget and Growth",
-        subtitle: "Plan wisely. Spend softly. Grow beautifully.",
-        image: "/images/budgetbgd.jpg",
-        titleStyle: {
-          fontFamily: "",
-          letterSpacing: "",
-          fontSize: "",
-        },
-        subtitleStyle: {
-          fontFamily: "",
-          letterspacing: "",
-          fontSize: "",
-        }
-    }
-]
+  {
+    id: 1,
+    theme: "library",
+    title: "Maison Library",
+    subtitle: "Every plan begins with a story and ends with a dream.",
+    image: "/images/librarybgd.jpg",
+  },
+  {
+    id: 2,
+    theme: "cafe",
+    title: "Cafe Amorette",
+    subtitle: "Soft moments, sweet sips, and a life beautifully planned.",
+    video: "/videos/cafeamorettehero.mp4",
+  },
+  {
+    id: 3,
+    theme: "teaching",
+    title: "Rooted in Teaching",
+    subtitle: "Grounded in purpose, growing with every lesson.",
+    image: "/images/teachingbgd.jpg",
+  },
+  {
+    id: 4,
+    theme: "budget",
+    title: "Budget & Growth",
+    subtitle: "Plan wisely. Spend softly. Grow beautifully.",
+    image: "/images/budgetbgd.jpg",
+  },
+];
+
 export default function Home() {
-    const [current, setCurrent] = useState(0); //what slide am I currently showing?
+  const [current, setCurrent] = useState(0);
 
-    useEffect(() => {
-        const timer = setInterval(() => { //reset 
-            setCurrent((prev) => (prev + 1) % slides.length); // go to the nect- if we hit the end go to 0
-        }, 8000); //run every 8 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 8000);
 
-        return () => clearInterval(timer); //clean up!
-    }, []);
+    return () => clearInterval(timer);
+  }, []);
 
-    const goPrev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-    const goNext = () => setCurrent((prev) => (prev + 1) % slides.length);
+  const goPrev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  const goNext = () => setCurrent((prev) => (prev + 1) % slides.length);
 
-    const active = slides[current]; //storing the slide 
+  const active = slides[current];
 
-    return (
-    <div>
-      <section style={{ position: "relative", overflow: "hidden", height: "80vh" }}>
-        <div key={active.id} className="hero-media fade-in">
+  return (
+    <main id="homePage">
+      <section className="hero">
+        <div key={active.id} className="heroMedia fade-in">
           {active.video ? (
             <video
-            className="hero-video"
-            src={active.video}
-            poster={active.poster}
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-          ) : ( <img
-            src={active.image}
-            alt={active.title}
-            style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-          />)}
-       </div>
-
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            textAlign: "center",
-            padding: 18,
-            background: "linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0))",
-            color: "white",
-          }}
-        >
-          <h2 style={{ margin: 0, ...active.titleStyle
-           }}>{active.title}</h2>
-          <p style={{ margin: "6px 0 0 0", ...active.subtitleStyle }}>{active.subtitle}</p>
+              className="heroVideo"
+              src={active.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          ) : (
+            <img className="heroImg" src={active.image} alt={active.title} />
+          )}
         </div>
 
-       
-        <button
-          onClick={goPrev}
-          style={{
-            position: "absolute",
-            left: 10,
-            top: "50%",
-            transform: "translateY(-50%)",
-            // padding: "10px 12px",
-            // borderRadius: 999,
-            border: "none",
-            background: "transparent",
-            color: "white",
-            cursor: "pointer",
-          }}
-        >
+        <div className="heroOverlay">
+          <p className="heroTag">Mocha Muse</p>
+          <h2 className={`heroTitle ${active.theme}`}>{active.title}</h2>
+          <p className={`heroSubtitle ${active.theme}`}>{active.subtitle}</p>
+
+
+          <div className="heroBtns">
+            <a className="heroBtnPrimary" href="/products">Shop Planners</a>
+            <a className="heroBtnGhost" href="/products">Explore Collections</a>
+          </div>
+        </div>
+
+        <button className="heroArrow left" onClick={goPrev} aria-label="Previous slide">
           ‹
         </button>
-
-        <button
-          onClick={goNext}
-          style={{
-            position: "absolute",
-            right: 10,
-            top: "50%",
-            transform: "translateY(-50%)",
-            padding: "10px 12px",
-            // borderRadius: 999,
-            border: "none",
-            background: "transparent",
-            color: "white",
-            cursor: "pointer",
-          }}
-        >
+        <button className="heroArrow right" onClick={goNext} aria-label="Next slide">
           ›
         </button>
+
+        <div className="heroDots">
+          {slides.map((s, i) => (
+            <button
+              key={s.id}
+              className={`dot ${i === current ? "active" : ""}`}
+              onClick={() => setCurrent(i)}
+              aria-label={`Go to ${s.title}`}
+            />
+          ))}
+        </div>
       </section>
-      <section style = {{
-        position: "relative",
-        height: "200px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-        }}>
-          <h3 style= {{
-            fontSize: "30px",
-            color: "#683924"
-          }}>END OF SEASON SALE </h3>
-        </section>
-      
-    </div>
-  );}
+
+      <section className="saleStrip">
+        <h3>END OF SEASON SALE</h3>
+        <p>Limited-time deals on cozy favorites. While supplies last.</p>
+        <a className="saleLink" href="/products">Shop sale →</a>
+      </section>
+
+      <section className="homeSection">
+        <div className="sectionHeader">
+          <h2>Shop by Collection</h2>
+          <p>Pick a mood. Find your perfect planner.</p>
+        </div>
+
+        <div className="collectionsGrid">
+          <a className="collectionCard" href="/products">
+            <img src="/images/librarybgd.jpg" alt="Maison Library" />
+            <div className="collectionText">
+              <h3>Maison Library</h3>
+              <p>Dark academia + quiet focus.</p>
+            </div>
+          </a>
+
+          <a className="collectionCard" href="/products">
+            <img src="/images/teachingbgd.jpg" alt="Rooted in Teaching" />
+            <div className="collectionText">
+              <h3>Rooted in Teaching</h3>
+              <p>Grounded planning for educators.</p>
+            </div>
+          </a>
+
+          <a className="collectionCard" href="/products">
+            <img src="/images/budgetbgd.jpg" alt="Budget and Growth" />
+            <div className="collectionText">
+              <h3>Budget & Growth</h3>
+              <p>Track spending. Grow gently.</p>
+            </div>
+          </a>
+
+          <a className="collectionCard" href="/products">
+            <img src="/images/hkplanner.jpg" alt="Hello Kitty" />
+            <div className="collectionText">
+              <h3>Hello Kitty</h3>
+              <p>Sweet, nostalgic, collectible.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+  );
+}
