@@ -37,7 +37,7 @@ export default function Products() { //defining product page component
             <div className="controlsRow">
                 <p>Total: {filteredProducts.length}</p>
 
-                <input className="maxPriceInput" type="number" placeholder="Max Price" onChange={(e) => setMaxPrice(e.target.value)}
+                <input aria-label="Maximum price" className="maxPriceInput" type="number" placeholder="Max Price" onChange={(e) => setMaxPrice(e.target.value)}
                 ></input>
             </div>
             <aside className="filters">

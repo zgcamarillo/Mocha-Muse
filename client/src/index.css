@@ -52,6 +52,15 @@ body {
   padding: 0;
   background-color: var(--cream);
 }
+/* ======ACCESABILITY====== */
+a:focus,
+button:focus,
+input:focus,
+select:focus {
+  border: 1px solid var(--rose);
+  border-radius: 12px;
+  padding: 2px 5px;
+}
 
 /* ----- NAVIGATION ------ */
 nav {
