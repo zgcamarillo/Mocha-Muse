@@ -67,6 +67,7 @@ export default function Products() { //defining product page component
                         <img className="productImg"
                             src={p.image}
                             alt={p.title}
+                            loading="lazy"
                         />
                         <h3 className="productTitle">{p.title}</h3>
                         <p className="productDesc">{p.description}</p>

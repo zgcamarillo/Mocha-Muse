@@ -5,7 +5,7 @@ const slides = [
     theme: "library",
     title: "Maison Library",
     subtitle: "Every plan begins with a story and ends with a dream.",
-    image: "/images/librarybgd.jpg",
+    image: "/images/librarybgd.webp",
   },
   {
     id: 2,
@@ -19,14 +19,14 @@ const slides = [
     theme: "teaching",
     title: "Rooted in Teaching",
     subtitle: "Grounded in purpose, growing with every lesson.",
-    image: "/images/teachingbgd.jpg",
+    image: "/images/teachingbgd.webp",
   },
   {
     id: 4,
     theme: "budget",
     title: "Budget & Growth",
     subtitle: "Plan wisely. Spend softly. Grow beautifully.",
-    image: "/images/budgetbgd.jpg",
+    image: "/images/budgetbgd.webp",
   },
 ];
 
@@ -58,9 +58,10 @@ export default function Home() {
               muted
               loop
               playsInline
+              preload="metadata"
             />
           ) : (
-            <img className="heroImg" src={active.image} alt={active.title} />
+            <img className="heroImg" src={active.image} alt={active.title} loading="eager"/>
           )}
         </div>
 
