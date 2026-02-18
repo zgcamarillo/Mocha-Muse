@@ -18,16 +18,24 @@ export default function Products() { //defining product page component
         setCart([...cart, product]);
         console.log("Cart:", [...cart, product]); // so you can see it working
 }
+    const filteredProducts = products.filter((p) => {
+    const typeValue = Array.isArray(p.type) ? p.type : [p.type];
+    const matchesType = selectedType === "All" || typeValue.includes(selectedType);
 
+    const matchesPrice = !maxPrice || Number(p.price) <= Number(maxPrice);
+
+  return matchesType && matchesPrice;
+});
     return (
         <div id="plannerPage">
-            <div id="header">
-                <h1>Planners</h1>
-                <h2>Stay organized with planners for every need. Find custom planners, dated & undated planners, specialty layouts and academic planners. </h2>
-                
+            <div className="shopTop">
+                <div id="header">
+                    <h1>Planners</h1>
+                    <h2>Stay organized with planners for every need. Find custom planners, dated & undated planners, specialty layouts and academic planners. </h2>
+                </div>
             </div>
             <div className="controlsRow">
-                <p>Total: {products.length}</p>
+                <p>Total: {filteredProducts.length}</p>
 
                 <input className="maxPriceInput" type="number" placeholder="Max Price" onChange={(e) => setMaxPrice(e.target.value)}
                 ></input>
