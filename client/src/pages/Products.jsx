@@ -7,6 +7,8 @@ export default function Products() { //defining product page component
     const [maxPrice, setMaxPrice] = useState("");
 
     useEffect(() => {
+    console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
+
     fetch(`${import.meta.env.VITE_API_URL}/api/products`)
         .then(res => res.json())
         .then(data => setProducts(data))
